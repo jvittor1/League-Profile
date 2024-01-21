@@ -8,6 +8,7 @@ import { UserAreaComponent } from 'src/app/components/user-area/user-area.compon
 import { ProfileComponent } from '../profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RankingAreaComponent } from 'src/app/components/ranking-area/ranking-area.component';
+import { MasteryAreaComponent } from 'src/app/components/mastery-area/mastery-area.component';
 
 
 
@@ -19,7 +20,8 @@ import { RankingAreaComponent } from 'src/app/components/ranking-area/ranking-ar
     HeaderComponent,
     UserAreaComponent,
     ProfileComponent,
-    RankingAreaComponent
+    RankingAreaComponent,
+    MasteryAreaComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,50 @@
+@import "../../../assets/styles/variables.scss";
+
+
+.masteryContainer{
+    position: relative;
+    align-items: flex-end;
+    justify-content: center;
+            
+    .border{
+        position: relative;
+        width: 130px; 
+        height: 130px; 
+        border-radius: 50%;
+        background-color: #000;
+        border: 3px solid $border-color-3;
+        z-index: 1;
+        margin-bottom: 8vh;
+        
+        &.mb-4{
+            margin-bottom: 16vh;
+        }
+        .champIcon{
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background-position: right;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+                
+        .masteryFlag{
+            position: absolute;
+            bottom: -73%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 101px;
+            background-position: bottom;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    
+    }
+}
+
