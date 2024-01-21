@@ -10,7 +10,6 @@ import { routes } from './app.routes';
   declarations: [
     AppComponent,
 
-
   ],
   imports: [
     BrowserModule,
