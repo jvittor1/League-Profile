@@ -1,0 +1,15 @@
+<div class="headerContainer flex">
+    <div class="borderUserInfo">
+        <div class="userInfo flex">
+            <div class="iconBorder">
+                <div class="userIcon" [style.background-image]="'url(../../../assets/images/user.png)'"></div>
+            </div>
+            <span class="title-medium">{{user}}</span>
+    </div>
+    </div>
+
+    <div class="headerDetails flex">
+        <span class="title-medium" (click)="setSelected('profile')" [ngClass]="{'selected': 'profile' === selected}">Profile</span>
+        <span class="title-medium" (click)="setSelected('history')" [ngClass]="{'selected': 'history' === selected}">History</span>
+    </div>
+</div>

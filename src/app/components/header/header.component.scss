@@ -1,0 +1,110 @@
+@import "../../../assets/styles/variables.scss";
+
+:host{
+    width: 100%;
+    
+    .headerContainer{
+        width: 100%;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        color: $text-color;
+    
+        .borderUserInfo{
+            width: 100%;
+            max-width: 400px;
+            padding-bottom: 4px;
+            padding-right: 4px;
+            height: 100%;
+            background-color: $border-color;
+            clip-path: polygon(0 0, 101% 0, 84.5% 100%, 0 100%);
+  
+
+            .userInfo{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 0 32px;
+                background-color: #101010;
+                clip-path: polygon(0 0, 99.6% 0, 84.5% 100%, 0 100%);
+        
+                
+                .iconBorder{
+                    position: absolute;
+                    width: 42px; 
+                    height: 42px; 
+                    border-radius: 50%;
+                    top: 45%;
+                    left: 20%;
+                    transform: translate(-50%, -50%);
+                    background-color: $border-color;
+                    z-index: 1;
+                    margin: 4px;
+    
+                    .userIcon{
+                        position: absolute;
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 2;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                }
+    
+                span{
+                    margin-left: 25%;
+                }
+            
+    
+            }
+        }
+
+        .headerDetails{
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: flex-start;
+            text-transform: uppercase;
+            margin-left: 32px;
+            gap: 22px;
+
+
+            span{
+                letter-spacing: 1px;
+                transition: all .2s ease-in-out;
+                cursor: pointer;
+                position: relative;
+
+                &:hover, &.selected{
+                    color: $selected-text-color;
+                    text-shadow: 0 0 2px $selected-text-color;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -4px;
+                        width: 100%;
+                        height: 1.5px;
+                        background: transparent;
+                        background-image: linear-gradient(to right, transparent 50%, $text-color, transparent 100%);
+                        background-size: 200% 100%;
+                        background-position: 100% 50%;
+                        transition: background-position .2s ease-in-out;
+                    }
+
+
+                }
+            }
+        }
+    
+    }
+}
+
