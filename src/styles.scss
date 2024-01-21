@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+@import "assets/styles/variables.scss";
+
+
+html, body {
+    background-color: #303030;
+    width: 100%;
+    height: 100%;   
+  }   
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0; 
+  }
+  
+  
+  .flex{
+    display: flex;
+  
+    &-center{
+      @extend .flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  .title{
+    font-weight: 600;
+    color: $text-color;
+
+    &-small{
+      @extend .title;
+      font-size: .75rem;
+    }
+    &-medium{
+      @extend .title;
+      font-size: 1rem;
+    }
+    &-large{
+      @extend .title;
+      font-size: 1.25rem;
+    }
+  }
