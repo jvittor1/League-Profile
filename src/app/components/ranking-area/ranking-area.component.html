@@ -1,10 +1,10 @@
 <div class="rankingContainer flex">
     <div class="rankingText">
-        <span class="title">Solo/Duo</span>
-        <span class="title">Diamond IV</span>
+        <span class="title">{{ replaceUnderscores(ranking.queueType) }}</span>
+        <span class="title">{{ranking.tier}} {{ranking.rank}}</span>
     </div>
 
-    <div class="rankingImg">
-        <img src="../../../assets/images/Season_2023_-_Diamond.webp" alt="Ranking Image">
+    <div class="rankingImg" *ngIf="ranking.tier">
+        <img [src]="getRankingImageURL(ranking.tier)" alt="Ranking Image">
     </div>
 </div>
