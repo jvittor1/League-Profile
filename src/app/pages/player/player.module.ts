@@ -9,6 +9,8 @@ import { ProfileComponent } from '../profile/profile.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RankingAreaComponent } from 'src/app/components/ranking-area/ranking-area.component';
 import { MasteryAreaComponent } from 'src/app/components/mastery-area/mastery-area.component';
+import { HistoryComponent } from '../history/history.component';
+import { MatchesComponent } from 'src/app/components/matches/matches.component';
 
 
 
@@ -21,7 +23,9 @@ import { MasteryAreaComponent } from 'src/app/components/mastery-area/mastery-ar
     UserAreaComponent,
     ProfileComponent,
     RankingAreaComponent,
-    MasteryAreaComponent
+    MasteryAreaComponent,
+    HistoryComponent,
+    MatchesComponent
   ],
   imports: [
     CommonModule,

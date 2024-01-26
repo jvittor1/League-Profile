@@ -1,8 +1,18 @@
-<!-- <div class="profileContainer flex" [style.background-image]="'url(' + urlChamp + ')'">
-    <app-header></app-header>
-</div> -->
+<div class="profileContainer flex" 
+*ngIf="urlChamp" 
+[style.background-image]="'url(' + urlChamp + ')'"
+[ngClass]="{
+    'isProfile': activeRoute === 'profile',
+    'isHistory': activeRoute === 'history'
+  }"
 
-<div class="profileContainer flex" [style.background-image]="'url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg)'">
-    <app-header [user]="'algum nick aí'"></app-header>
+>
+    <app-header [user]="user"></app-header>
     <router-outlet></router-outlet>
 </div>
+
+
+<!-- <div class="profileContainer flex" [style.background-image]="'url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg)'">
+    <app-header [user]="'algum nick aí'"></app-header>
+    <router-outlet></router-outlet>
+</div> -->
