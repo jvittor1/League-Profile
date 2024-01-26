@@ -1,0 +1,128 @@
+@import "../../../assets/styles/variables.scss";
+
+
+.matchesContainer{
+    background-color: rgba(255, 0, 0, 0);
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 6px solid transparent;
+    position: relative;
+    border-bottom: 2px solid $border-color-4;
+    padding: 18px 4px;
+    cursor: pointer;
+
+    &:hover{
+        border-left: 6px solid $border-color-3;
+    
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 1.5px;
+            background: transparent;
+            background-image: linear-gradient(to right, transparent 30%, $text-color, transparent 100%);
+            background-size: 150% 100%;
+            background-position: 140% 50%;
+            transition: background-position 0.2s ease-in-out;
+        }
+
+        &::before {
+            top: 0; 
+          }
+        
+          &::after {
+            bottom: 0;
+        }
+    }
+
+
+    .imgContainer{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: relative;
+        border: 2px solid $border-color-3;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            image-rendering: pixelated;
+            object-fit: cover;
+            // object-position: right;
+        }
+
+        span{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #000;
+            color: $gray-color;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: .75rem;
+            font-weight: 600;
+            border: 2px solid $border-color-3;
+
+        }
+    }
+
+
+    .gameContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        gap: 4px;
+        
+        h3{
+            color: $gray-color !important;
+        }
+    }
+
+    .kdaContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: .75rem;
+        gap: 6px;
+    }
+
+
+    .gameDuration{
+        align-items: center;
+        font-size: .8rem;
+
+        .divisor{
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: $gray-color;
+            margin-left: 8px;
+            margin-right: 8px;
+            opacity: .4;
+        }
+    }
+}   
+
+
+.win{
+    color: $win-color;
+}
+
+
+.lose{
+    color: $lose-color;
+}
+
+.text{
+    color: $gray-color !important;
+    letter-spacing: 1px;
+    font-weight: 600;
+}

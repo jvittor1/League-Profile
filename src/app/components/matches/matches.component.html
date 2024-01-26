@@ -1,0 +1,22 @@
+<div class="matchesContainer flex">
+    <div class="imgContainer">
+        <img [src]="'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + match.participants[getPlayerIndex(match.participants)].championName +  '_0.jpg'" alt="Champion image">
+        <span class="flex-center">{{match.participants[getPlayerIndex(match.participants)].championLevel}}</span>
+    </div>
+
+    <div class="gameContainer">
+        <h2 class="title-medium" [ngClass]="{'win': match.participants[getPlayerIndex(match.participants)].win, 'lose': !match.participants[getPlayerIndex(match.participants)].win}">{{ match.participants[getPlayerIndex(match.participants)].win ? 'Victory' : 'Defeat' }}</h2>
+        <h3 class="title-small">{{match.gameMode}}</h3>
+    </div>
+
+    <div class="kdaContainer">
+        <span class="text">KDA</span>
+        <span class="text">{{match.participants[getPlayerIndex(match.participants)].kda}}</span>
+    </div>
+
+    <div class="gameDuration flex">
+        <span class="text">{{calcDuration(match.duration) }}</span>
+        <span class="divisor"></span>
+        <span class="text">{{calcDate(match.date)}}</span>
+    </div>
+</div>
