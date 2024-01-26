@@ -11,6 +11,7 @@ import { RankingAreaComponent } from 'src/app/components/ranking-area/ranking-ar
 import { MasteryAreaComponent } from 'src/app/components/mastery-area/mastery-area.component';
 import { HistoryComponent } from '../history/history.component';
 import { MatchesComponent } from 'src/app/components/matches/matches.component';
+import { MatchDetailsComponent } from 'src/app/pages/match-details/match-details.component';
 
 
 
@@ -25,7 +26,8 @@ import { MatchesComponent } from 'src/app/components/matches/matches.component';
     RankingAreaComponent,
     MasteryAreaComponent,
     HistoryComponent,
-    MatchesComponent
+    MatchesComponent,
+    MatchDetailsComponent
   ],
   imports: [
     CommonModule,

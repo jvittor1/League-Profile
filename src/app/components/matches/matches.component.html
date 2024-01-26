@@ -1,4 +1,4 @@
-<div class="matchesContainer flex">
+<div class="matchesContainer flex" (click)="getMatchDetails(match.matchId)">
     <div class="imgContainer">
         <img [src]="'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + match.participants[getPlayerIndex(match.participants)].championName +  '_0.jpg'" alt="Champion image">
         <span class="flex-center">{{match.participants[getPlayerIndex(match.participants)].championLevel}}</span>
