@@ -2,6 +2,7 @@ export function userInitialize() {
     return {
         puuId: '',
         name: '',
-        tagLine: ''
+        level: 0,
+        summonerId: '',
     };
 }
