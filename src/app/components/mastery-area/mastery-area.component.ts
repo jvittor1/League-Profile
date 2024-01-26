@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MasteryAreaComponent {
 
+  @Input() champImg: string = '';
 
   @Input() mainChampion: boolean = false;
 

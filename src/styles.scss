@@ -43,3 +43,11 @@ html, body {
       font-size: 1.25rem;
     }
   }
+
+  .mt{
+    @for $i from 1 to 10{
+      &-#{$i}{
+        margin-top: #{$i}vh;
+      }
+    } 
+  }

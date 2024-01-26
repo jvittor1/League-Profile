@@ -1,4 +1,4 @@
-import { LeagueService } from './service/league.service';
+import { LeagueService } from './services/league.service';
 import { Component } from '@angular/core';
 
 @Component({
