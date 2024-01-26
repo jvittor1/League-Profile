@@ -1,7 +1,7 @@
 <div class="userAreaContainer flex" [style.background-image]="'url(../../../assets/images/Season_2023_-_Default_Banner.webp)'">
     
     <div class="userLevel">
-        <span>500</span>
+        <span>{{user.level}}</span>
     </div>
     
     <div class="userImg">
@@ -12,7 +12,7 @@
     </div>
 
     <div class="userName flex-center">
-        <span class="title-medium">Nome</span>
+        <span class="title-medium">{{user.name}}</span>
         <fa-icon class="copyIcon" [icon]="faCopy"></fa-icon>
     </div>
 </div>

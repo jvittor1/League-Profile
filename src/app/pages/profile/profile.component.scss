@@ -16,6 +16,7 @@
         .profileDetails{
             width: 100%;
             height: 100%;
+            justify-content: space-around;
             
             .masteryArea{
                 width: 100%;
@@ -26,6 +27,12 @@
                 justify-content: flex-end;
                 text-transform: uppercase;
                 letter-spacing: 1px;
+                max-width: 1000px;
+                
+                span{
+                    margin-bottom: 2vh;
+                    font-size: 0.8rem !important;
+                }
                 
                 .mostMasteryChamps{
                     width: 100%;

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
+import { userInitialize } from 'src/app/common/userInitialize';
+import { IUser } from 'src/app/interfaces/IUser';
 
 @Component({
   selector: 'app-user-area',
@@ -7,5 +9,7 @@ import { faCopy } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./user-area.component.scss']
 })
 export class UserAreaComponent {
+  @Input() user: IUser = userInitialize();
+
   faCopy = faCopy;
 }

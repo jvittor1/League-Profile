@@ -1,15 +1,15 @@
-<div class="profileContainer flex">
-    <app-user-area></app-user-area>
+<div class="profileContainer flex" *ngIf="continue">
+    <app-user-area [user]="user"></app-user-area>
     <div class="profileDetails flex pad">
-        <app-ranking-area></app-ranking-area>
+        <app-ranking-area [ranking]="ranking"></app-ranking-area>
 
     
         <div class="masteryArea">
-            <span class="title">Pontuação de maestria</span>
+            <span class="title">mastery score</span>
             
             <div class="mostMasteryChamps flex pad">
                 <ng-container *ngFor="let index of [0, 1, 2]">
-                    <app-mastery-area [mainChampion]="index === 0" [ngClass]="{'order-1': index === 0, 'order-2': index === 1, 'order-3': index === 2}"></app-mastery-area>
+                    <app-mastery-area [champImg]="masteryChamps[index]" [mainChampion]="index === 0" [ngClass]="{'order-1': index === 0, 'order-2': index === 1, 'order-3': index === 2}"></app-mastery-area>
                 </ng-container>
             </div>
             
