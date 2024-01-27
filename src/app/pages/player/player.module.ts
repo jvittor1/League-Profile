@@ -1,3 +1,4 @@
+import { MatchTableComponent } from './../../components/match-table/match-table.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -27,7 +28,8 @@ import { MatchDetailsComponent } from 'src/app/pages/match-details/match-details
     MasteryAreaComponent,
     HistoryComponent,
     MatchesComponent,
-    MatchDetailsComponent
+    MatchDetailsComponent,
+    MatchTableComponent
   ],
   imports: [
     CommonModule,

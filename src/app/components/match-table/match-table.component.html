@@ -1,0 +1,30 @@
+<div class="tableContainer flex-center">
+    <table>
+        <thead>
+            <tr>
+                <th class="w-10 right" [ngClass]="{'red': team === 'Team 2', 'blue': team === 'Team 1'}">{{team}}</th>
+                <th class="w-25" [ngClass]="{'red': team === 'Team 2', 'blue': team === 'Team 1'}">Player</th>
+                <!-- <th class="w-15">65.530 MOEDINHA ICONE</th> -->
+                <th class="w-20 center"><img src="../../../assets/images/sword.png" alt="Sword icon" class="icon"></th>
+                <th class="w-10 right"><img src="../../../assets/images/minion.png" alt="Minions icon" class="icon"></th>
+                <th class="w-20 right"><img src="../../../assets/images/coin.png" alt="Coin icon" class="icon"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let player of players; let i = index">
+                <td class="right" [ngClass]="{'selected': checkPlayer(player.puuId)}">{{player.championLevel}}</td>
+                <td class="gray-color">
+                    <div class="summonerArea flex" [ngClass]="{'selected': checkPlayer(player.puuId)}">
+                        <img [src]="'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + player.championName  +  '_0.jpg'" alt="Champion image">
+                        {{player.summonerName}}
+                    </div>
+                </td>
+                <td class="center" [ngClass]="{'selected': checkPlayer(player.puuId)}">{{player.kda}}</td>
+                <td class="right" [ngClass]="{'selected': checkPlayer(player.puuId)}">{{player.totalMinionsKilled}}</td>
+                <td class="right" [ngClass]="{'selected': checkPlayer(player.puuId)}">{{player.goldEarned}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

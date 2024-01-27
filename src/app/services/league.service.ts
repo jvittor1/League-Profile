@@ -107,8 +107,7 @@ export class LeagueService {
     
     matches.forEach(async (match: any) => {
       const matchData = await this.getMatch(match);
-      const newMatch = setMatches(matchData);
-      allMatches.push(newMatch);
+      allMatches.push(matchData);
     });
  
     
@@ -121,7 +120,8 @@ export class LeagueService {
     const apiURL = this.apiUrl + 'match/' + matchId;
     const response = await fetch(apiURL);
     const data = await response.json(); 
-    return data;
+    const newMatch = setMatches(data);
+    return newMatch;
   }
 
 }
