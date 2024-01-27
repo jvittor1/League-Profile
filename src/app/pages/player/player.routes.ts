@@ -21,11 +21,16 @@ export const playerRoutes: Routes = [
             },
             {
                 path: 'history/:puuId',
-                component: HistoryComponent
-            },
-            {
-                path: 'history/:puuId/:matchId',
-                component: MatchDetailsComponent
+                children: [
+                    {
+                        path: '',
+                        component: HistoryComponent
+                    },
+                    {
+                        path: ':matchId',
+                        component: MatchDetailsComponent
+                    }
+                ]
             }
         ]
     }

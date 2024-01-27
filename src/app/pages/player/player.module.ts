@@ -13,6 +13,7 @@ import { MasteryAreaComponent } from 'src/app/components/mastery-area/mastery-ar
 import { HistoryComponent } from '../history/history.component';
 import { MatchesComponent } from 'src/app/components/matches/matches.component';
 import { MatchDetailsComponent } from 'src/app/pages/match-details/match-details.component';
+import { ButtonComponent } from 'src/app/components/button/button.component';
 
 
 
@@ -29,7 +30,8 @@ import { MatchDetailsComponent } from 'src/app/pages/match-details/match-details
     HistoryComponent,
     MatchesComponent,
     MatchDetailsComponent,
-    MatchTableComponent
+    MatchTableComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
