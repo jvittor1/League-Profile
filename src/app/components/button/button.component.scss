@@ -1,0 +1,17 @@
+@import "../../../assets/styles/variables.scss";
+
+button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1e282d;
+    color: $text-color;
+    border: 3px solid $border-color-3;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        color: $selected-text-color;    
+    }
+}
