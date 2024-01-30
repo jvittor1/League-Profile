@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { matchesInitialize } from 'src/app/common/matchesInitialize';
 import { IMatch } from 'src/app/interfaces/IMatch';
 import { IPlayer } from 'src/app/interfaces/IPlayer';
@@ -13,7 +13,7 @@ export class MatchesComponent {
 
   @Input() match: IMatch = matchesInitialize();
 
-  constructor(private activeRoute: ActivatedRoute, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(){
     console.log(this.match);
@@ -37,15 +37,17 @@ export class MatchesComponent {
 
 
   getPlayerIndex(player: IPlayer[]){
-    const playerPuuId = this.activeRoute.snapshot.paramMap.get('puuId');
+    const playerPuuId = this.router.url.split('/')[2] || ''
+
+    
     const playerIndex = player.findIndex((player) => player.puuId === playerPuuId);
     return playerIndex;
   }
 
 
   getMatchDetails(matchId: string){
-    const playerPuuId = this.activeRoute.snapshot.paramMap.get('puuId');
-    this.router.navigate([`/player/history/${playerPuuId}/${matchId}`]);
+    const playerPuuId = this.router.url.split('/')[2] || ''
+    this.router.navigate([`/player/${playerPuuId}/history/${matchId}`]);
 
   }
 

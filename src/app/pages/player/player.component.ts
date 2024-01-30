@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { userInitialize } from 'src/app/common/userInitialize';
 import { IUser } from 'src/app/interfaces/IUser';
 import { LeagueService } from 'src/app/services/league.service';
@@ -15,7 +16,8 @@ export class PlayerComponent {
   activeRoute: string = '';
 
   constructor(
-    private leagueService: LeagueService, 
+    private leagueService: LeagueService,
+    private currentRoute: ActivatedRoute,
     private routerService: RouterService, 
     private cdr: ChangeDetectorRef) { }
 
@@ -25,7 +27,7 @@ export class PlayerComponent {
 
     this.routerService.activeRoute$.subscribe(activeRoute => {
       this.activeRoute = activeRoute;
-      console.log(this.activeRoute);
+      // console.log(this.activeRoute);
       
       this.cdr.detectChanges();
     })
@@ -33,11 +35,14 @@ export class PlayerComponent {
   }
 
   async getChampUrl() {
-    this.urlChamp = await this.leagueService.getChampImg();
+    const playerPuuId = this.currentRoute.snapshot.paramMap.get('puuId') || '';
+    this.urlChamp = await this.leagueService.getChampImg(playerPuuId);
   }
   
   async getSummoner(){
-    this.user = await this.leagueService.getSummoner();
+    const playerPuuId = this.currentRoute.snapshot.paramMap.get('puuId') || '';
+    this.user = await this.leagueService.getSummoner(playerPuuId);
+
   }
 
 

@@ -19,16 +19,18 @@ export class HeaderComponent {
 
 
   ngOnInit(): void {
-    this.getSelected();
+    this.getSelected()
   }
 
 
   setSelected(selected: string) {
+
+    
     if (this.selected !== selected) {
         this.selected = selected;
-        this.router.navigate([`/player/${selected}/${this.user.puuId}`]);
-        console.log(`/player/${selected}/${this.user.puuId}`);
-        
+        this.router.navigate([`/player/${this.user.puuId}/${selected}`]);
+        // console.log(`/player/${this.user.puuId}/${selected}`);
+        // console.log('selected', selected);
         this.routeService.setActiveRoute(selected);
 
     }
@@ -37,7 +39,10 @@ export class HeaderComponent {
 
 
   getSelected() {
-    this.setSelected(this.router.url.split('/')[2]);  
+    const selectedPage = this.router.url.split('/')[3];
+    this.selected = selectedPage;
+    this.routeService.setActiveRoute(selectedPage);
+    
   }
 
 }

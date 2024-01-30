@@ -7,7 +7,7 @@ import { IMatch } from '../interfaces/IMatch';
   providedIn: 'root'
 })
 export class LeagueService {
-  apiUrl = 'http://localhost:4000/';
+  apiUrl = environment.backendUrl;
 
   constructor() { }
 
@@ -33,8 +33,8 @@ export class LeagueService {
   }
   
 
-  async getMostPlayedChamp() {
-    const puuId = environment.puuId;
+  async getMostPlayedChamp(puuId: string) {
+
     const apiURL = this.apiUrl + 'mostPlayedChamp/' + puuId;
 
     const response = await fetch(apiURL);
@@ -45,8 +45,7 @@ export class LeagueService {
   }
 
 
-  async getMasteries() {
-    const puuId = environment.puuId;
+  async getMasteries(puuId: string) {
     const apiURL = this.apiUrl + 'mainChamps/' + puuId;
     const response = await fetch(apiURL);
     const data = await response.json();
@@ -55,18 +54,18 @@ export class LeagueService {
   }
 
 
-  async getChampImg() {
-    const champId = await this.getMostPlayedChamp();
+  async getChampImg(puuId: string) {
+    const champId = await this.getMostPlayedChamp(puuId);
     const champName = await this.getChampById(champId);
     const champImg = environment.champImgUrl + champName + '_0.jpg';
-    console.log(champImg);
+    // console.log(champImg);
     
     return champImg;
   }
 
-  async getChampsImg() {
-    const imgUrl: string[] = []; // Declare imgUrl as an array
-    const champId = await this.getMasteries();
+  async getChampsImg(puuId: string) {
+    const imgUrl: string[] = []; 
+    const champId = await this.getMasteries(puuId);
     champId.forEach(async (champ: any) => {
       const champName = await this.getChampById(champ.championId);
       imgUrl.push(environment.champImgUrl + champName + '_0.jpg');
@@ -76,8 +75,7 @@ export class LeagueService {
     return imgUrl;
   }
 
-  async getSummoner() {
-    const puuId = environment.puuId;
+  async getSummoner(puuId: string) {
     const apiURL = this.apiUrl + 'summoner/' + puuId;
     const response = await fetch(apiURL);
     return setUser(await response.json());

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { rankingInitialize } from 'src/app/common/rankingInitialize';
 import { userInitialize } from 'src/app/common/userInitialize';
 import { IRanking } from 'src/app/interfaces/IRanking';
@@ -16,7 +17,7 @@ export class ProfileComponent {
     masteryChamps: string[] = [''];
     continue: boolean = false;
 
-    constructor(private leagueService: LeagueService) { }
+    constructor(private leagueService: LeagueService, private router: Router) { }
   
     ngOnInit(): void {
       this.getChampsImg();
@@ -29,7 +30,8 @@ export class ProfileComponent {
       }
 
     async getSummoner(){
-      this.user = await this.leagueService.getSummoner();
+      const playerPuuId = this.router.url.split('/')[2] || ''
+      this.user = await this.leagueService.getSummoner(playerPuuId);
     }
 
     async getRanking(){
@@ -38,6 +40,7 @@ export class ProfileComponent {
     }
 
     async getChampsImg(){
-      this.masteryChamps = await this.leagueService.getChampsImg();
+      const playerPuuId = this.router.url.split('/')[2] || ''
+      this.masteryChamps = await this.leagueService.getChampsImg(playerPuuId);
     }
 }
