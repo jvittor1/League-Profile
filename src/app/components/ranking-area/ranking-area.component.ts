@@ -21,8 +21,13 @@ export class RankingAreaComponent {
   
   getRankingImageURL(ranking: string){ 
     return `../../../assets/images/Season_2023_-_${ranking.charAt(0) + ranking.slice(1).toLowerCase()}.webp`;
-    
-    
+  }
+
+  checkRank(){
+    if(this.ranking.queueType === '' || this.ranking.tier === ''){
+      return false;
+    }
+    return true;
   }
 
 }

@@ -16,8 +16,6 @@ export class MatchesComponent {
   constructor(private router: Router) { }
 
   ngOnInit(){
-    console.log(this.match);
-    
   }
 
   calcDate(timeStamp: string){

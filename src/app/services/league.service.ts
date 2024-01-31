@@ -58,7 +58,6 @@ export class LeagueService {
     const champId = await this.getMostPlayedChamp(puuId);
     const champName = await this.getChampById(champId);
     const champImg = environment.champImgUrl + champName + '_0.jpg';
-    // console.log(champImg);
     
     return champImg;
   }
@@ -93,7 +92,7 @@ export class LeagueService {
     
     const response = await fetch(apiURL);
     const data = await response.json();
-    
+    if(data.length === 0) return setRanking({queueType: 'RANKED_SOLO_5x5', tier: 'Unranked', rank: ' '});
     return setRanking(data[0]);
 
   }

@@ -30,7 +30,6 @@ export class MatchDetailsComponent {
   async getMatchDetails() {
     this.matchDetails = await this.leagueService.getMatch(this.matchId);
     this.defineTeams(this.matchDetails);
-    console.log(this.matchDetails);
     
   }
 

@@ -1,10 +1,10 @@
-<div class="rankingContainer flex">
+<div class="rankingContainer flex" *ngIf="checkRank()">
     <div class="rankingText">
         <span class="title">{{ replaceUnderscores(ranking.queueType) }}</span>
         <span class="title">{{ranking.tier}} {{ranking.rank}}</span>
     </div>
 
-    <div class="rankingImg" *ngIf="ranking.tier">
+    <div class="rankingImg">
         <img [src]="getRankingImageURL(ranking.tier)" alt="Ranking Image">
     </div>
 </div>

@@ -27,7 +27,6 @@ export class PlayerComponent {
 
     this.routerService.activeRoute$.subscribe(activeRoute => {
       this.activeRoute = activeRoute;
-      // console.log(this.activeRoute);
       
       this.cdr.detectChanges();
     })

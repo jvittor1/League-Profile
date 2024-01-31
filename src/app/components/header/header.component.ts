@@ -21,7 +21,6 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.getSelected()
-    console.log(this.user);
     
   }
 
@@ -32,8 +31,7 @@ export class HeaderComponent {
     if (this.selected !== selected) {
         this.selected = selected;
         this.router.navigate([`/player/${this.user.puuId}/${selected}`]);
-        console.log(`/player/${this.user.puuId}/${selected}`);
-        // console.log('selected', selected);
+
         this.routeService.setActiveRoute(selected);
 
     }
