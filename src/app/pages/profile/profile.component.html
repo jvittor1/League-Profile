@@ -1,4 +1,8 @@
 <div class="profileContainer flex" *ngIf="continue">
+    <div class="search">
+        <app-search></app-search>
+        
+    </div>
     <app-user-area [user]="user"></app-user-area>
     <div class="profileDetails flex pad">
         <app-ranking-area [ranking]="ranking"></app-ranking-area>

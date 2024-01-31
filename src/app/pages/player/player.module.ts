@@ -14,6 +14,8 @@ import { HistoryComponent } from '../history/history.component';
 import { MatchesComponent } from 'src/app/components/matches/matches.component';
 import { MatchDetailsComponent } from 'src/app/pages/match-details/match-details.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
+import { SearchComponent } from 'src/app/components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -31,12 +33,14 @@ import { ButtonComponent } from 'src/app/components/button/button.component';
     MatchesComponent,
     MatchDetailsComponent,
     MatchTableComponent,
-    ButtonComponent
+    ButtonComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(playerRoutes),
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ]
 })
 export class PlayerModule { }

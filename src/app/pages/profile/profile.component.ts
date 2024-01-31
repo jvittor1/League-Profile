@@ -35,6 +35,8 @@ export class ProfileComponent {
     }
 
     async getRanking(){
+      console.log('aki:\n',this.user.summonerId);
+      
       this.ranking = await this.leagueService.getRanking(this.user.summonerId);
       
     }

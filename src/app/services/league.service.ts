@@ -81,6 +81,11 @@ export class LeagueService {
     return setUser(await response.json());
   }
   
+  async getSummonerByName(name: string, tag: string) {
+    const apiURL = this.apiUrl + 'summoner/' + name + '/' + tag;
+    const response = await fetch(apiURL);
+    return await response.json();
+  }
 
 
   async getRanking(summonerId: string) {

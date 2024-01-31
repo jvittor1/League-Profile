@@ -1,0 +1,7 @@
+<div class="searchContainer">
+    <fa-icon class="icon" [icon]="searchIcon"></fa-icon>
+    <form (ngSubmit)="handleSubmit()">
+        <input type="text" placeholder="Player search" name="searchQuery" [(ngModel)]="searchQuery">
+    </form>
+    <fa-icon *ngIf="searchQuery" (click)="clearInput()" class="close-icon" [icon]="xMark"></fa-icon>
+</div>
