@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { matchesInitialize } from 'src/app/common/matchesInitialize';
 import { IMatch } from 'src/app/interfaces/IMatch';
 import { IPlayer } from 'src/app/interfaces/IPlayer';
+import { Location } from '@angular/common';
 import { LeagueService } from 'src/app/services/league.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class MatchDetailsComponent {
   team1: IPlayer[] = [];
   team2: IPlayer[] = [];
 
-  constructor(private activeRoute: ActivatedRoute, private leagueService: LeagueService) { }
+  constructor(private activeRoute: ActivatedRoute, private leagueService: LeagueService, private location: Location) { }
 
 
   ngOnInit(): void {
@@ -39,4 +40,7 @@ export class MatchDetailsComponent {
     this.team1 = matches.participants.slice(5, 10);
   }
 
+  goBack() {
+    this.location.back();
+  }
 }

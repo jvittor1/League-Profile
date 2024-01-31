@@ -3,6 +3,7 @@ import { Router, Routes } from '@angular/router';
 import { userInitialize } from 'src/app/common/userInitialize';
 import { IUser } from 'src/app/interfaces/IUser';
 import { RouterService } from 'src/app/services/router.service';
+import { environment } from 'src/environment.api';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,8 @@ export class HeaderComponent {
 
   ngOnInit(): void {
     this.getSelected()
+    console.log(this.user);
+    
   }
 
 
@@ -29,7 +32,7 @@ export class HeaderComponent {
     if (this.selected !== selected) {
         this.selected = selected;
         this.router.navigate([`/player/${this.user.puuId}/${selected}`]);
-        // console.log(`/player/${this.user.puuId}/${selected}`);
+        console.log(`/player/${this.user.puuId}/${selected}`);
         // console.log('selected', selected);
         this.routeService.setActiveRoute(selected);
 
@@ -45,4 +48,14 @@ export class HeaderComponent {
     
   }
 
+
+  checkUser(){
+    if (this.user.puuId === environment.defaultUser) return false;
+    return true;
+  }
+
+  goToDefaultProfile(){
+    this.router.navigate([`/player/${environment.defaultUser}`]);
+  }
+  
 }

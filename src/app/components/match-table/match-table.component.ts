@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { IPlayer } from 'src/app/interfaces/IPlayer';
 
 @Component({
@@ -13,7 +13,7 @@ export class MatchTableComponent {
 
 
 
-  constructor(private activeRoute: ActivatedRoute) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -21,11 +21,18 @@ export class MatchTableComponent {
 
 
   checkPlayer(playerPuuId: string): boolean | undefined {
-    const puuId = this.activeRoute.snapshot.paramMap.get('puuId');
+    const puuId = this.router.url.split('/')[2] || ''
     if (puuId === playerPuuId) {
       return true;
     }
     return undefined;
   };
+
+
+  goToUserProfile(puuId: string) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false; 
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([`/player/${puuId}`]);
+  }
 
 }

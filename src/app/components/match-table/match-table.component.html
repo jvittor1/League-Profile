@@ -17,7 +17,9 @@
                 <td class="gray-color">
                     <div class="summonerArea flex" [ngClass]="{'selected': checkPlayer(player.puuId)}">
                         <img [src]="'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + player.championName  +  '_0.jpg'" alt="Champion image">
-                        {{player.summonerName}}
+                        <span (click)="goToUserProfile(player.puuId)"> 
+                            {{player.summonerName}}
+                        </span>
                     </div>
                 </td>
                 <td class="center" [ngClass]="{'selected': checkPlayer(player.puuId)}">{{player.kda}}</td>

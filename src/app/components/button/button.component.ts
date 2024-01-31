@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Location } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,10 +8,11 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 })
 export class ButtonComponent {
   xMark = faXmark;
-  
-  constructor(private location: Location) { }
+  @Output() onClick = new EventEmitter<void>();
 
-  goBack(){
-    this.location.back();
+  constructor() { }
+
+  handleClick() {
+    this.onClick.emit();
   }
 }

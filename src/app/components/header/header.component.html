@@ -12,4 +12,8 @@
         <span class="title-medium" (click)="setSelected('profile')" [ngClass]="{'selected': 'profile' === selected}">Profile</span>
         <span class="title-medium" (click)="setSelected('history')" [ngClass]="{'selected': 'history' === selected}">History</span>
     </div>
+
+    <div *ngIf="checkUser()" class="btnClose">
+        <app-button (onClick)="goToDefaultProfile()"></app-button>
+    </div>
 </div>
