@@ -53,7 +53,7 @@ export class HeaderComponent {
   }
 
   goToDefaultProfile(){
-    this.router.navigate([`/player/${environment.defaultUser}`]);
+    this.router.navigate([`/player/${environment.defaultUser}/profile`]);
   }
   
 }
