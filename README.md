@@ -1,27 +1,42 @@
-# LeagueProfile
+# League Profile
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+Este é um projeto Angular que recriou o perfil do usuário do jogo League of Legends.
 
-## Development server
+## Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O projeto permite que os usuários acessem tanto os próprios perfis quanto os perfis de outros jogadores.
 
-## Code scaffolding
+## Capturas de Tela
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Página Inicial
+![Captura de tela da página inicial](src/assets/screenshots/imgProfile.jpeg)
+*Legenda: Captura de tela da página inicial*
 
-## Build
+### Histórico de Partidas
+![Captura de tela do Histórico de Partidas](src/assets/screenshots/imgHistoryMatch.jpeg)
+*Legenda: Captura de tela do Histórico de Partidas*
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Detalhes das Partidas
+![Captura de tela dos Detalhes das Partidas](src/assets/screenshots/imgHistoryMatchDetails.jpeg)
+*Legenda: Captura de tela dos Detalhes das Partidas*
 
-## Running unit tests
+## Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone este repositório: `git clone https://github.com/jvittor1/League-Profile.git`.
+2. Navegue até o diretório do projeto: `cd leagueProfile`.
+3. Instale as dependências do FrontEnd: `npm install`.
+4. Navegue até o diretório do backend: `cd riotApi`.
+5. Instale as dependências do Backend: `npm install`.
+6. Faça login em sua conta Riot em [developer.riotgames.com](https://developer.riotgames.com), acesse DASHBOARD e gere sua API key.
+7. Acesse [developer.riotgames.com/apis#summoner-v4/GET_getBySummonerName](https://developer.riotgames.com/apis#summoner-v4/GET_getBySummonerName) e use seu nome de usuário para obter seu PuuID.
+8. Defina as informações adquiridas em `enviromenment.api.ts` e em `riotApi/server.js`.
 
-## Running end-to-end tests
+## Uso
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Inicialize o Backend: `npm run dev`. 
+2. Inicialize o Frontend: `ng serve`.
+3. Abra seu navegador e vá para `http://localhost:4200/`.
 
-## Further help
+## Autores
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [João Vitor](https://github.com/jvittor1)
